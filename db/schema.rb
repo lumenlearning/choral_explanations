@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024030449) do
+ActiveRecord::Schema.define(version: 20161024034739) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 20161024030449) do
     t.index ["parent_context_id"], name: "index_contexts_on_parent_context_id", using: :btree
   end
 
+  create_table "responses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "license"
+    t.integer  "chorus_id",                  null: false
+    t.integer  "user_id"
+    t.integer  "context_id"
+    t.jsonb    "settings",    default: "{}", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.index ["chorus_id"], name: "index_responses_on_chorus_id", using: :btree
+    t.index ["context_id"], name: "index_responses_on_context_id", using: :btree
+    t.index ["user_id"], name: "index_responses_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -51,4 +66,7 @@ ActiveRecord::Schema.define(version: 20161024030449) do
   add_foreign_key "choruses", "contexts"
   add_foreign_key "choruses", "users"
   add_foreign_key "contexts", "contexts", column: "parent_context_id"
+  add_foreign_key "responses", "choruses"
+  add_foreign_key "responses", "contexts"
+  add_foreign_key "responses", "users"
 end
