@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024023940) do
+ActiveRecord::Schema.define(version: 20161024030449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "choruses", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "context_id"
+    t.integer  "user_id"
+    t.string   "learning_outcome_guid"
+    t.string   "license"
+    t.jsonb    "settings",              default: "{}", null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["context_id"], name: "index_choruses_on_context_id", using: :btree
+    t.index ["user_id"], name: "index_choruses_on_user_id", using: :btree
+  end
 
   create_table "contexts", force: :cascade do |t|
     t.string   "name"
@@ -34,5 +48,7 @@ ActiveRecord::Schema.define(version: 20161024023940) do
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
   end
 
+  add_foreign_key "choruses", "contexts"
+  add_foreign_key "choruses", "users"
   add_foreign_key "contexts", "contexts", column: "parent_context_id"
 end
