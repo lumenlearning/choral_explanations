@@ -1,0 +1,31 @@
+{
+  "name": "choral_explanations",
+  "version": "0.0.1",
+  "description": "small question and answers website",
+  "main": "app.js",
+  "dependencies": {
+    "aphrodite": "^1.0.0",
+    "lodash": "^4.16.4",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "superagent": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.18.0",
+    "babel-loader": "^6.2.5",
+    "webpack": "^1.13.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumenlearning/choral_explanations.git"
+  },
+  "author": "lumen learning",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lumenlearning/choral_explanations/issues"
+  },
+  "homepage": "https://github.com/lumenlearning/choral_explanations#readme"
+}
