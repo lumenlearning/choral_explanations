@@ -18,3 +18,8 @@
 
 config/secrets.yml
 config/database.yml
+
+# This is generated from the client app
+/app/assets/javascripts/bundle.js
+
+/public/assets/*
