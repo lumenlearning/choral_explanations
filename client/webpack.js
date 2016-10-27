@@ -14,14 +14,16 @@ class Bundler {
 
     pg
       .version('0.1.1')
-      .option('-w', '--watch', 'enable webpack watch')
-      .option('-e', '--env [environment]', 'run webpack in specified mode (Default: "development")')
+      .option('-w, --watch', 'enable webpack watch')
+      .option('-e, --env [environment]', 'run webpack in specified mode (Default: "development")')
       .parse(process.argv);
 
 
-    this.compiler = webpack(wpConfig.config(pg.env ? pg.env : 'development'));
+    this.compiler = webpack(wpConfig.config(pg.E ? pg.E : 'development'));
 
-    if(pg.W) {
+    console.log(`transpiling with ${pg.env ? pg.env : 'development'} enviornment`);
+
+    if(pg.watch) {
       return this.constructor.watch(wpConfig.watchSettings());
     }
     else {
