@@ -9,6 +9,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 
 gem 'active_model_serializers'
+gem 'jsonapi', '~> 0.1.1.beta6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

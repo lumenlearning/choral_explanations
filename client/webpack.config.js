@@ -1,14 +1,14 @@
 "use strict";
-import webpack from 'webpack';
-import path from 'path';
+let webpack = require('webpack');
+let path = require('path');
 
-export default new class WpConfig{
+module.exports = new class WpConfig{
 
   config(env = "development"){
     return {
-      entry: "./components/app.jsx",
+      entry: "./app.jsx",
       output: {
-        path: path.resolve(__dirname, '../assets/assets/javascripts/'),
+        path: `${__dirname}/../app/assets/javascripts/`,
         filename: "bundle.js"
       },
       resolve:{
