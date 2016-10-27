@@ -3,8 +3,7 @@ import React from 'react';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 //IMPORT COMPONENTS HERE
-
-
+import Base from './components/base.jsx';
 
 export default ()=>{
   return (
