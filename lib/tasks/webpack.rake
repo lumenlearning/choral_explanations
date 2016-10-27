@@ -2,7 +2,7 @@ require 'pp'
 
 desc 'compile bundles using webpack'
 task "assets:webpack_mine" do
-  cmd    = 'cd client && webpack --config webpack.config.js --progress --profile --colors --json'
+  cmd    = 'cd client && node webpack.js -e production'
   output = `#{cmd}`
   stats  = JSON.parse output
 
@@ -23,7 +23,7 @@ namespace :assets do
 
   desc 'Compile assets with webpack'
   task :webpack do
-    cmd    = 'cd client && webpack --config webpack.config.js --progress --profile --colors --json'
+    cmd    = 'cd client && node webpack.js -e production'
     output = `#{cmd}`
     stats  = JSON.parse output
 
@@ -38,7 +38,7 @@ namespace :assets do
   namespace :webpack do
     desc 'compile with webpack and watch for changes'
     task :watch do
-      sh "cd client && webpack --config webpack.config.js --colors --progress --watch --devtool inline-source-map"
+      sh "cd client && node webpack.js -w"
     end
   end
 

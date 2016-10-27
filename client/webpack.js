@@ -19,7 +19,7 @@ class Bundler {
       .parse(process.argv);
 
 
-    this.compiler = webpack(wpConfig.config(pg.E ? pg.E : 'development'));
+    this.compiler = webpack(wpConfig.config(pg.env ? pg.env : 'development'));
 
     console.log(`transpiling with ${pg.env ? pg.env : 'development'} enviornment`);
 
