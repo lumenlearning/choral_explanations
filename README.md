@@ -66,6 +66,7 @@ Now in your choral_explanations folder install all the gem dependencies like thi
 ## Client Javascript App
 
 The entire frontend is in the `/client` folder. You have to set it up as well.
+You should use Node 5.x+
 
 ```
 ~/choral_explanations$ cd client
