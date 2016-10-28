@@ -5,10 +5,30 @@ export default class UserPreview extends Component{
     super(props);
   }
 
+  anonymousUsername() {
+    let first = [
+      'absurd',
+      'bashful',
+      'cantankerous'
+    ]
+
+    let last = [
+      'aardvark',
+      'baboon',
+      'catfish'
+    ]
+
+    let firstName = first[Math.floor(Math.random()* first.length)]
+    let lastName = last[Math.floor(Math.random()* last.length)]
+
+    return firstName + " " + lastName
+
+  }
+
   render() {
     if(!this.props.user){
       return <div>
-        <div>Default user thing</div>
+        <div>{this.anonymousUsername()}</div>
       </div>
     }
 

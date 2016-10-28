@@ -1,5 +1,6 @@
 class ChorusSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :license, :learning_outcome_guid, :created_at, :user
+  attributes :id, :name, :description, :license, :learning_outcome_guid,
+  :response_count, :created_at, :user
 
   # belongs_to :user
   belongs_to :context
@@ -13,6 +14,10 @@ class ChorusSerializer < ActiveModel::Serializer
               avatar_url: ''
       }
     end
+  end
+
+  def response_count
+    object.responses.count
   end
 
 end

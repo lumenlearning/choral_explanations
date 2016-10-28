@@ -13,8 +13,8 @@ module.exports = new class WpConfig{
       },
       resolve:{
         alias:{
-          theme: `${__dirname}/components/_common/_theme/`,
-          style: './styles/style.js',
+          theme: `${__dirname}/components/_common/theme/theme.jsx`,
+          style: './css/style.js',
           actions: `${__dirname}/actions/`,
           stores: `${__dirname}/stores/`
         },
