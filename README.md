@@ -125,7 +125,7 @@ Migrate your development and test databases:
 
 You can load a simple initial Chorus by:
 ```
-be rake db:setup
+~/choral_explanations$ bundle exec rake db:setup
 ```
 
 ## Running Tests
