@@ -32,8 +32,14 @@ export default class Chorus extends Component {
     return (
         <div>
           <h1>{this.state.chorus.attributes.name}</h1>
+          <div dangerouslySetInnerHTML={this.renderText()}></div>
+          <hr/>
           <Responses chorusId={this.props.params.chorusId}/>
         </div>
     );
+  }
+
+  renderText() {
+    return {__html: this.state.chorus.attributes.description}
   }
 }
