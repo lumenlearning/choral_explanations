@@ -120,7 +120,12 @@ Migrate your development and test databases:
 
 ```
 ~/choral_explanations$ bundle exec rake db:migrate
-~/choral_explanations$ bundle exec rake db:test:reset
+~/choral_explanations$ RAILS_ENV=test bundle exec rake db:reset
+```
+
+You can load a simple initial Chorus by:
+```
+be rake db:setup
 ```
 
 ## Running Tests
