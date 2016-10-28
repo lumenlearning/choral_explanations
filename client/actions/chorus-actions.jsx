@@ -6,8 +6,7 @@ const Request = new request();
 class ChorusActions {
 
   load(options) {
-    const params = options.params || {};
-    const route = "choruses/" + params.chorusId + "?include=responses";
+    const route = "choruses/" + options.chorusId + "?";
 
     return (dispatch) => {
       Request.get(route, {}, (err, res)=> {

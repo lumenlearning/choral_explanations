@@ -1,9 +1,9 @@
-class ChorusSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description, :license, :learning_outcome_guid, :created_at, :user
+class ResponseSerializer < ActiveModel::Serializer
+  attributes :id, :name, :description, :license, :user, :created_at
 
+  # belongs_to :chorus
+  # belongs_to :context
   # belongs_to :user
-  belongs_to :context
-  has_many :responses
 
   def user
     if object.user

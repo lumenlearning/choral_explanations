@@ -21,7 +21,7 @@ chorus = Chorus.create!(name: "What is mitosis? Why is it important?", user: use
 </div>
 HTML
 
-Response.create!(name: "Re: Mitosis", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
+Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
 <p>Did you ever wonder why (most) nerve cells do not replace themselves? (In case you didn’t know this, it’s true — nerve cells don’t undergo mitosis, which is one reason why people with brain damage can’t regrow a new brain, and a reason why nerve damage is a difficult condition for which to find remedies).</p>
 <p>One reason nerve cells cannot replace themselves is that they lack centrioles. Centrioles, as the video below demonstrates, are crucial in the mitotic process. They are what pulls the replicated DNA in the mitotic process into two separate cells.</p>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/AhgRhXl7w_g" frameborder="0" allowfullscreen></iframe></p>
@@ -30,6 +30,6 @@ Response.create!(name: "Re: Mitosis", user: user, context: context, chorus: chor
 <p>But understanding these mechanisms also helps explain why researchers studying diseases of the brain and nervous system (such as Alzheimer’s and Parkinson’s) are so excited by stem cell research. Neural stem cells can divide and propagate — they are programmed both to divide and have the equipment (such as centrioles) to do so. By producing new cells, these stem cells could repair nerve damage, and potentially reverse the progess of diseases such as Parkinson’s, Multiple Sclerosis, and Alzheimer’s.</p>
 <p>Understanding how mitosis works in stem cells (and understanding why nerve cells are amitotic) helps researchers develop treatments for these diseases.</p>
 HTML
-Response.create!(name: "Re: What is mitosis? Why is it important?", context: context, chorus: chorus, license: 'cc_by', description: 'Response 2')
+Response.create!(name: "Re: What is mitosis? Why is it important?", user: user2, context: context, chorus: chorus, license: 'cc_by', description: 'Response 2')
 Response.create!(name: "Re: What is mitosis? Why is it important?", context: context, chorus: chorus, license: 'cc_by', description: 'Response 3')
 Response.create!(name: "Re: What is mitosis? Why is it important?", context: context, chorus: chorus, license: 'cc_by', description: 'Response 4')

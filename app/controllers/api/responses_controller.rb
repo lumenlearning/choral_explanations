@@ -2,7 +2,7 @@ class Api::ResponsesController < Api::ApiController
 
   def index
     chorus = Chorus.find(params[:chorus_id])
-    render json: chorus.responses
+    render json: chorus.responses.includes(:user)
   end
 
   def show
