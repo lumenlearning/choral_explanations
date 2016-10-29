@@ -31,7 +31,9 @@ Set default node to appropriate version -currently v6.9.1 ([nvm](https://github.
 
 ### Debian/Ubuntu
 
-todo..
+```
+sudo apt-get install libxml2-dev postgresql libpq-dev libxmlsec1-dev curl make g++ build-essential libssl-dev
+```
 
 ## Installing Gems to a user folder
 ------
@@ -109,6 +111,7 @@ psql
 alter user choral_explanations password 'choral_explanations';
 create user choral_explanations with password 'choral_explanations';
 create database choral_explanations_development owner choral_explanations;
+create database choral_explanations_test owner choral_explanations;
 ```
 
 Then add that user to the default section in `config/database.yml`
@@ -119,13 +122,8 @@ Then add that user to the default section in `config/database.yml`
 Migrate your development and test databases:
 
 ```
-~/choral_explanations$ bundle exec rake db:migrate
-~/choral_explanations$ RAILS_ENV=test bundle exec rake db:reset
-```
-
-You can load a simple initial Chorus by:
-```
 ~/choral_explanations$ bundle exec rake db:setup
+~/choral_explanations$ RAILS_ENV=test bundle exec rake db:reset
 ```
 
 ## Running Tests
