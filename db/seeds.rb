@@ -11,7 +11,8 @@ user = User.create!(name: "Linda Heilig")
 user2 = User.create!(name: "Mike C")
 
 # https://www.quora.com/What-is-mitosis-Why-is-it-important
-chorus = Chorus.create!(name: "What is mitosis? Why is it important?", user: user2, context: context, license: 'cc_by', description: <<HTML)
+chorus = Chorus.create!(name: "What is mitosis? Why is it important?", user: user2, context: context, license: 'cc_by', description: "Help others understand the importance of Mitosis.")
+Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
 <div>
 <p>Let’s take a different tack with the “importance” angle. What things do you see that can be explained by mitosis? Here’s one I think is interesting: Why does people’s hair fall out when they get chemotherapy for cancer?</p>
 <p>Surprisingly, the answer is that chemotherapy drugs target cell division (mitosis). This is because one difference cancer cells have from normal cells is the rate at which they divide. Normal cells divide fairly rarely, but cancer cells divide all the time. If you can stop cancer cells from dividing, you can stop the spread of cancer.</p>

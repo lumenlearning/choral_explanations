@@ -7,9 +7,11 @@ import Style from 'style'
 export default class Chorus extends Component {
   constructor(props) {
     super(props);
-    this.state = {chorus: null};
+    this.state = {chorus: null, showResponses: false};
 
     this.onChange = this.onChange.bind(this);
+    this.showResponses = this.showResponses.bind(this);
+    this.responses = this.responses.bind(this);
   }
 
   componentDidMount() {
@@ -26,12 +28,12 @@ export default class Chorus extends Component {
   }
 
   render() {
-    let style = Style.styles()
+    let style = Style.styles();
 
     if (!this.state.chorus) {
       return <p>Loading...</p>
     }
-console.log(this.state)
+
     return (
         <div>
           <h1 className={Style.css(style.red)}>{this.state.chorus.attributes.name}</h1>
@@ -39,11 +41,28 @@ console.log(this.state)
           <hr/>
 
           <div dangerouslySetInnerHTML={this.renderText()}></div>
-          <hr/>
-          <h2>Responses</h2>
-          <Responses chorusId={this.props.params.chorusId}/>
+          {this.responses()}
         </div>
     );
+  }
+
+  responses(){
+    if(this.state.showResponses){
+      return <div>
+        <hr/>
+        <Responses chorusId={this.props.params.chorusId}/>
+      </div>
+    } else {
+      return <div style={{textAlign: 'center'}}>
+        <button onClick={this.showResponses}>Show {this.state.chorus.attributes.response_count} Responses</button>
+      </div>
+    }
+  }
+
+  showResponses(){
+    this.setState({
+      showResponses: true
+    })
   }
 
   renderText() {

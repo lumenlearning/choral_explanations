@@ -31,6 +31,7 @@ export default class Responses extends Component{
 
     return (
       <div>
+        <h2>Responses</h2>
         {this.state.responses.map((res) => {
           return (
             <Response key={res.id} response={res} />
