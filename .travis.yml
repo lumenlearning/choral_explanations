@@ -1,0 +1,15 @@
+language: ruby
+env:
+- DB=postgresql
+script:
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake
+before_script:
+- cp config/secrets.yml.example config/secrets.yml
+- cp config/database.yml.example config/database.yml
+- psql -c 'create database choral_explanations_test' -U postgres
+addons:
+  postgresql: 9.4
+notifications:
+  slack:
+    secure: cj0ok2OHUDpd9MyE7cnZd1ZjvRWHNNWQQZGy8lNAd8uq3fblTJQcCEY/zYgkfXbP8uhStAoC8EDxsdxuszm0IRPy6RskRbQntTFMgIHTFlxUlv+YopTOxAk/Gu3ipH8miXlOAmoBHfiR5FHY0SISnWi7ir4aO/CDq8mV4kOGedAPJXs3BVKNIWXDjj20BWNMypOuUzx6gi1XdQLQU7nhOBHBy13BdqnzIzboCe0rUJK5D8T9HEf9VjSjS5Qcwre9soMlGdkFZ+VxxSkzc2BQRL9dbrgOVhw5e/J/Bi4jFgg1RJDQqzGzTskOW1RtI78gzk8mbZlb33UayUn/yqjYxERUFvHFNmXtImEk2TiOkPcwnqTZ+9ey5CVKDgb6NqKZT4K1vR3ErsCYPOMX6kinlAi9yBCJz4x0LmDbhK14rD8AI8zkIrSSa/KnJ+vuwwlTY8G7nD9gtXzlDufw05HPy0rMdv0p7wSsBOt96UZij+GOeGbXzUydr28qBmURorGNKvyeafJl/Qmky6MiZ4pgywJQaqYh744RQ8xAvBbTT4Fyg0mbHX7vrXpHM6e2XXC7lVXIH4bRyvU5v+BMeacRNaVP1yyDuHlHg7TESrcpYSuzb14nt4KvdDAdg/m1azN6/sqJWXyQ1dc+UDYdXeY/iYVmZTRY69AICvQ98cCjqzU=
