@@ -1,18 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Api::ChorusesController, type: :controller do
-  let(:chorus) { FactoryGirl.create(:chorus) }
-  let(:params) { {id: chorus.id} }
-
+RSpec.describe Api::ResponsesController, type: :controller do
+  let(:c_response) { FactoryGirl.create(:response) }
+  let(:params) { {chorus_id: c_response.chorus.id} }
 
   context "is_public" do
 
     context "GET #index" do
-      it "should return only default context for base route"
-
       it "should return choruses" do
-        chorus
-        get :index
+        c_response
+        get :index, params: params
         json = JSON.parse(response.body)
 
         expect(response).to have_http_status(:success)
@@ -23,15 +20,15 @@ RSpec.describe Api::ChorusesController, type: :controller do
 
     context "GET #show" do
       it "should return the chorus" do
-        chorus
-        get :show, params: params
+        c_response
+        get :show, params: params.merge(id: c_response.id)
         json = JSON.parse(response.body)["data"]
 
         expect(response).to have_http_status(:success)
-        expect(json["id"]).to eq chorus.id.to_s
-        expect(json["type"]).to eq "choruses"
-        expect(json["attributes"]["name"]).to eq chorus.name
-        expect(json["relationships"]["context"]["data"]["id"]).to eq chorus.context.id
+        expect(json["id"]).to eq c_response.id.to_s
+        expect(json["type"]).to eq "responses"
+        expect(json["attributes"]["name"]).to eq c_response.name
+        expect(json["attributes"]["license"]).to eq c_response.license
       end
     end
   end

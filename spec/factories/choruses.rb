@@ -4,6 +4,9 @@ FactoryGirl.define do
     description "<p><strong>Test data</strong></p>"
     learning_outcome_guid "abc123"
     license "cc_by"
+
+    user
+    context
   end
 
 end
