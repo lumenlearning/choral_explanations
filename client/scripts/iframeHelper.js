@@ -1,16 +1,20 @@
 var IframeHelper = {
-  inIframe: function(){
+  inIframe: function () {
     return self != top;
   },
 
   // get rid of double iframe scrollbars
   setHeight: function () {
-    var default_height = $(document).height();
-    default_height = default_height > 500 ? default_height : 500;
+    var body = document.body,
+        html = document.documentElement;
+
+    var default_height = Math.max(body.scrollHeight, body.offsetHeight,
+        html.clientHeight, html.scrollHeight, html.offsetHeight);
 
     parent.postMessage(JSON.stringify({
       subject: "lti.frameResize",
-      height: default_height
+      height: default_height,
+      element_id: IframeHelper.getParameterByName('iframe_resize_id')
     }), "*");
   },
 
@@ -35,6 +39,18 @@ var IframeHelper = {
     parent.postMessage(JSON.stringify({
       subject: "lti.scrollToTop"
     }), "*");
+  },
+
+  getParameterByName: function (name, url) {
+    if (!url) {
+      url = window.location.href;
+    }
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
   }
 };
 

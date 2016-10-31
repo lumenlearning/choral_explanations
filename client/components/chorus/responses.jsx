@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ResponseActions from '../../actions/response-actions.jsx'
-import ResponseStore from '../../stores/response-store.jsx'
-import Response from './response.jsx'
+import ResponseActions from '../../actions/response-actions.jsx';
+import ResponseStore from '../../stores/response-store.jsx';
+import Response from './response.jsx';
+import IframeHelper from '../../scripts/iframeHelper.js';
 
 export default class Responses extends Component{
   constructor(props){
@@ -22,6 +23,7 @@ export default class Responses extends Component{
 
   onChange(state) {
     this.setState({responses: state[this.props.chorusId]});
+    setTimeout(IframeHelper.setHeight, 150)
   }
 
   render() {
