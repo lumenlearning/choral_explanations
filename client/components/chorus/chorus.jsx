@@ -3,6 +3,7 @@ import ChorusActions from '../../actions/chorus-actions.jsx';
 import ChorusStore from '../../stores/chorus-store.jsx';
 import Responses from './responses.jsx';
 import Style from 'style';
+import IframeHelper from '../../scripts/iframeHelper.js';
 
 export default class Chorus extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Chorus extends Component {
   componentDidMount() {
     ChorusStore.listen(this.onChange);
     ChorusActions.load(this.props.params);
+    setTimeout(IframeHelper.setHeight, 150)
   }
 
   componentWillUnmount() {
