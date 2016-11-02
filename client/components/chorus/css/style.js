@@ -17,6 +17,9 @@ export default new class Style extends Theme {
       'chorusH2': {
         fontSize: '1.1em'
       },
+      'chorusH3': {
+        marginTop: '50px'
+      },
       'chorusP': {
         fontSize: '0.9em'
       },
