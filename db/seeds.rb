@@ -13,8 +13,8 @@ user3 = User.create!(name: "Marguerite Wagner")
 user4 = User.create!(name: "Cleveland Dozier")
 
 # https://www.quora.com/What-is-mitosis-Why-is-it-important
-chorus = Chorus.create!(name: "What is mitosis? Why is it important?", user: user2, context: context, license: 'cc_by', description: "Help others understand the importance of Mitosis.")
-Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
+chorus = Chorus.create!(name: "What is mitosis? Why is it important?", user: user2, context: context, license: 'cc_by', description: "Examples and explanations from other students.")
+Response.create!(name: "It's why hair falls out with chemotherapy.", user: user2, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
 <div>
 <p>Let’s take a different tack with the “importance” angle. What things do you see that can be explained by mitosis? Here’s one I think is interesting: Why does people’s hair fall out when they get chemotherapy for cancer?</p>
 <p>Surprisingly, the answer is that chemotherapy drugs target cell division (mitosis). This is because one difference cancer cells have from normal cells is the rate at which they divide. Normal cells divide fairly rarely, but cancer cells divide all the time. If you can stop cancer cells from dividing, you can stop the spread of cancer.</p>
@@ -24,7 +24,7 @@ Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, 
 </div>
 HTML
 
-Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
+Response.create!(name: "Why are nerve cell diseases like brain damage, Parkinson's, MS, and Alzheimer's hard to treat?", user: user, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
 <p>Did you ever wonder why (most) nerve cells do not replace themselves? (In case you didn’t know this, it’s true — nerve cells don’t undergo mitosis, which is one reason why people with brain damage can’t regrow a new brain, and a reason why nerve damage is a difficult condition for which to find remedies).</p>
 <p>One reason nerve cells cannot replace themselves is that they lack centrioles. Centrioles, as the video below demonstrates, are crucial in the mitotic process. They are what pulls the replicated DNA in the mitotic process into two separate cells.</p>
 <p><iframe width="560" height="315" src="https://www.youtube.com/embed/AhgRhXl7w_g" frameborder="0" allowfullscreen></iframe></p>
@@ -33,13 +33,10 @@ Response.create!(name: "Re: What is mitosis? Why is it important?", user: user, 
 <p>But understanding these mechanisms also helps explain why researchers studying diseases of the brain and nervous system (such as Alzheimer’s and Parkinson’s) are so excited by stem cell research. Neural stem cells can divide and propagate — they are programmed both to divide and have the equipment (such as centrioles) to do so. By producing new cells, these stem cells could repair nerve damage, and potentially reverse the progess of diseases such as Parkinson’s, Multiple Sclerosis, and Alzheimer’s.</p>
 <p>Understanding how mitosis works in stem cells (and understanding why nerve cells are amitotic) helps researchers develop treatments for these diseases.</p>
 HTML
-Response.create!(name: "Re: What is mitosis? Why is it important?", user: user2, context: context, chorus: chorus, license: 'cc_by', description: 'Response 2')
-Response.create!(name: "Re: What is mitosis? Why is it important?", context: context, chorus: chorus, license: 'cc_by', description: 'Response 3')
-Response.create!(name: "Re: What is mitosis? Why is it important?", context: context, chorus: chorus, license: 'cc_by', description: 'Response 4')
 
 
 
-chorus = Chorus.create!(name: "What is solute potential?", user: user3, context: context, license: 'cc_by', description: "Help others understand solute potential.")
+chorus = Chorus.create!(name: "What is solute potential?", user: user3, context: context, license: 'cc_by', description: "Examples and explanations from other students.")
 Response.create!(name: "It’s Why Slugs Melt!", user: user4, context: context, chorus: chorus, license: 'cc_by', description: <<HTML)
 <p>Maybe as a kid you were horrible (many kids are) and you tortured slugs in the back yard by putting salt on them and watching them shrivel up. Or maybe as a kid at the lake you were latched onto by leeches that were horrible (most leeches are) and you watched with amazement as you mom slayed them effortlessly with the salt shaker.</p>
 <p>If you think about what’s happening here, you’ll have a bit more of a grip on solute potential.</p>
