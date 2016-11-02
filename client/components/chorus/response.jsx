@@ -12,7 +12,9 @@ export default class Response extends Component{
 
     return (
       <div>
-        <h3 className={Style.css(style.chorusH3)}>{this.props.response.attributes.name}</h3>
+        <a name={"res_" + this.props.response.id}>
+          <h3 className={Style.css(style.chorusH3)}>{this.props.response.attributes.name}</h3>
+        </a>
         <UserPreview user={this.props.response.attributes.user} />
         <div className={Style.css(style.chorusP)} dangerouslySetInnerHTML={this.renderText()}></div>
         <hr/>
