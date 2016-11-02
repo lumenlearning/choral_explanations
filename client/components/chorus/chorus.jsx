@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
-import ChorusActions from '../../actions/chorus-actions.jsx'
-import ChorusStore from '../../stores/chorus-store.jsx'
-import Responses from './responses.jsx'
-import Style from 'style'
+import React, {Component} from 'react';
+import ChorusActions from '../../actions/chorus-actions.jsx';
+import ChorusStore from '../../stores/chorus-store.jsx';
+import Responses from './responses.jsx';
+import Style from 'style';
 
 export default class Chorus extends Component {
   constructor(props) {
@@ -29,6 +29,7 @@ export default class Chorus extends Component {
 
   render() {
     let style = Style.styles();
+    let font = Style.font();
 
     if (!this.state.chorus) {
       return <p>Loading...</p>
@@ -36,25 +37,27 @@ export default class Chorus extends Component {
 
     return (
         <div>
-          <h1 className={Style.css(style.red)}>{this.state.chorus.attributes.name}</h1>
-          <h2>{this.state.chorus.attributes.response_count} Responses</h2>
-          <hr/>
+          <h1 className={Style.css(font.normal, style.chorusH1)}>{this.state.chorus.attributes.name}</h1>
+          <h2 className={Style.css(font.normal, style.chorusH2)}>{this.state.chorus.attributes.response_count} Responses</h2>
+          <hr className={Style.css(style.hr)}/>
 
-          <div dangerouslySetInnerHTML={this.renderText()}></div>
           {this.responses()}
         </div>
     );
   }
 
   responses(){
+    let style = Style.styles();
+    let font = Style.font();
+
     if(this.state.showResponses){
       return <div>
-        <hr/>
         <Responses chorusId={this.props.params.chorusId}/>
       </div>
     } else {
       return <div style={{textAlign: 'center'}}>
-        <button onClick={this.showResponses}>Show {this.state.chorus.attributes.response_count} Responses</button>
+        <div className={Style.css(font.normal)} dangerouslySetInnerHTML={this.renderText()}></div>
+        <button className={Style.css(style.showResponses)} onClick={this.showResponses}>Show {this.state.chorus.attributes.response_count} Responses</button>
       </div>
     }
   }

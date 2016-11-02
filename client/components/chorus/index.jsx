@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import ChorusActions from '../../actions/chorus-actions.jsx'
-import ChorusStore from '../../stores/chorus-store.jsx'
-import {Link} from 'react-router'
+import ChorusActions from '../../actions/chorus-actions.jsx';
+import ChorusStore from '../../stores/chorus-store.jsx';
+import {Link} from 'react-router';
+import Style from 'style';
 
 export default class ChorusIndex extends Component{
   constructor(props){

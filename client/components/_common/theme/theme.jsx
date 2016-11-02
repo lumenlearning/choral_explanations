@@ -33,6 +33,10 @@ export default class Theme{
     return css(...arguments);
   }
 
+  font() {
+    return StyleSheet.create(this.constructor.fonts());
+  }
+
   static gridType(){
     return {
       'grid':{
@@ -142,6 +146,14 @@ export default class Theme{
       xl: '@media (min-width: 1920px)'
     }
   };
+
+  static fonts() {
+    return {
+      normal: {fontFamily:'sans-serif'},
+      italic: {fontFamily:'sans-serif', fontStyle:'italic'},
+      bold: {fontFamily:'sans-serif', fontWeight:'bold'}
+    }
+  }
 
   static color () {
     return {

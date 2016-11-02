@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import UserPreview from './user-preview.jsx'
+import UserPreview from './user-preview.jsx';
+import Style from 'style';
 
 export default class Response extends Component{
   constructor(props){
@@ -7,11 +8,14 @@ export default class Response extends Component{
   }
 
   render() {
+    let style = Style.styles();
+
     return (
       <div>
-        <h3>{this.props.response.attributes.name}</h3>
+        <h3 className={Style.css(style.chorusH3)}>{this.props.response.attributes.name}</h3>
         <UserPreview user={this.props.response.attributes.user} />
-        <div dangerouslySetInnerHTML={this.renderText()}></div>
+        <div className={Style.css(style.chorusP)} dangerouslySetInnerHTML={this.renderText()}></div>
+        <hr/>
       </div>
     );
   }

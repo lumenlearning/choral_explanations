@@ -3,6 +3,7 @@ import ResponseActions from '../../actions/response-actions.jsx';
 import ResponseStore from '../../stores/response-store.jsx';
 import Response from './response.jsx';
 import IframeHelper from '../../scripts/iframeHelper.js';
+import Style from 'style';
 
 export default class Responses extends Component{
   constructor(props){
@@ -27,13 +28,14 @@ export default class Responses extends Component{
   }
 
   render() {
+    let font = Style.font();
+
     if( !this.state.responses ){
       return <p>Loading...</p>
     }
 
     return (
-      <div>
-        <h2>Responses</h2>
+      <div className={Style.css(font.normal)}>
         {this.state.responses.map((res) => {
           return (
             <Response key={res.id} response={res} />
