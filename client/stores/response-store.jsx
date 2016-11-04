@@ -17,6 +17,15 @@ class ResponseStore {
     });
   }
 
+  onCreateResponse(data) {
+    let responses = _.clone(this.state[data.chorusId], true);
+    responses.push(data.response);
+
+    this.setState({
+      [data.chorusId]: responses
+    });
+  }
+
 }
 
 export default alt.createStore(ResponseStore);

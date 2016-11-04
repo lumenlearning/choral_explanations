@@ -51,6 +51,15 @@ export default new class Style extends Theme {
         marginLeft: '10px',
         fontSize: '0.8em',
         lineHeight: '1.3em'
+      },
+      'titleInput': {
+        'maxWidth': '800px',
+        'width': '100%',
+        'fontSize': '2em',
+        'margin': '5px'
+      },
+      'titleLabel': {
+        'fontSize': '2em'
       }
     })
   }

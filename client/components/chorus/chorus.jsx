@@ -8,7 +8,7 @@ import IframeHelper from '../../scripts/iframeHelper.js';
 export default class Chorus extends Component {
   constructor(props) {
     super(props);
-    this.state = {chorus: null, showResponses: false};
+    this.state = {chorus: null, showResponses: this.props.showResponses};
 
     this.onChange = this.onChange.bind(this);
     this.showResponses = this.showResponses.bind(this);

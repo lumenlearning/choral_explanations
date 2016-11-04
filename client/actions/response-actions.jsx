@@ -17,6 +17,20 @@ class ResponseActions {
   }
 
 
+  createResponse(params, responseProperties, callback=null){
+    const route = "choruses/" + params.chorusId + "/responses";
+
+    return (dispatch) => {
+      Request.post(route, {response: responseProperties}, (err, res)=> {
+        dispatch({chorusId: params.chorusId, response: res.data});
+        if(callback){
+          callback(res.data);
+        }
+      });
+    }
+  }
+
+
 }
 
 export default alt.createActions(ResponseActions);
