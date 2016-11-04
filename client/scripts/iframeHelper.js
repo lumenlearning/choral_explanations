@@ -4,12 +4,14 @@ var IframeHelper = {
   },
 
   // get rid of double iframe scrollbars
-  setHeight: function () {
-    var body = document.body,
-        html = document.documentElement;
+  setHeight: function (default_height=null) {
+    if(!default_height){
+      var body = document.body,
+          html = document.documentElement;
 
-    var default_height = Math.max(body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight);
+      default_height = Math.max(body.scrollHeight, body.offsetHeight,
+          html.clientHeight, html.scrollHeight, html.offsetHeight);
+    }
 
     parent.postMessage(JSON.stringify({
       subject: "lti.frameResize",

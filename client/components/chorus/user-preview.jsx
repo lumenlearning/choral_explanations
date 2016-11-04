@@ -37,7 +37,7 @@ export default class UserPreview extends Component{
         </div>
         <div className={Style.css(style.userInfo)}>
           <div className={Style.css(font.bold)}>Anonymous User</div>
-          <div className={Style.css(font.italic)}>Professor of Biology at Cambridge</div>
+          <div className={Style.css(font.italic)}>A Student</div>
         </div>
       </div>
     }
@@ -50,7 +50,7 @@ export default class UserPreview extends Component{
         </div>
         <div className={Style.css(style.userInfo)}>
           <div className={Style.css(font.bold)}>{this.props.user.name}</div>
-          <div className={Style.css(font.italic)}>Professor of Biology at Cambridge</div>
+          <div className={Style.css(font.italic)}></div>
         </div>
       </div>
     );

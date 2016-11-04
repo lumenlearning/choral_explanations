@@ -24,7 +24,7 @@ export default class Responses extends Component{
 
   onChange(state) {
     this.setState({responses: state[this.props.chorusId]});
-    setTimeout(IframeHelper.setHeight, 150)
+    setTimeout(()=>{IframeHelper.setHeight(900)}, 150)
   }
 
   render() {
@@ -36,6 +36,15 @@ export default class Responses extends Component{
 
     return (
       <div className={Style.css(font.normal)}>
+        <ul>
+        {this.state.responses.map((res) => {
+          return (
+            <li key={res.id}>
+              <a href={"#res_" + res.id}>{res.attributes.name}</a>
+            </li>
+          );
+        })}
+        </ul>
         {this.state.responses.map((res) => {
           return (
             <Response key={res.id} response={res} />
