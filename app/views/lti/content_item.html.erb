@@ -1,0 +1,6 @@
+<h1>Choose a Chorus:</h1>
+<ul>
+  <% @choruses.each do |chorus| %>
+    <li><a href="<%=  content_item_return_path(chorus.id) + "?return_url=#{@return_url}&return_type=#{@return_type}" %>"><%= chorus.name %></a></li>
+  <% end %>
+</ul>

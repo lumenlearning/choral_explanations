@@ -13,7 +13,7 @@ export default ()=>{
       <Route path="/" component={ChorusIndex} />
       <Route path="/choruses/:chorusId" component={Chorus} />
 
-      <Route path="/lti/choruses/:chorusId" component={AddChorus} />
+      <Route path="/lti/choruses/:chorusId/responses" component={AddChorus} />
     </Router>
   )
 }

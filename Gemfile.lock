@@ -64,6 +64,9 @@ GEM
     health_check (2.2.1)
       rails (>= 4.0)
     i18n (0.7.0)
+    ims-lti (1.1.10)
+      builder
+      oauth (~> 0.4.5)
     jsonapi (0.1.1.beta6)
       jsonapi-parser (= 0.1.1.beta3)
       jsonapi-renderer (= 0.1.1.beta1)
@@ -85,6 +88,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
+    oauth (0.4.7)
     pg (0.19.0)
     puma (3.6.0)
     rack (2.0.1)
@@ -163,6 +167,7 @@ DEPENDENCIES
   factory_girl_rails
   good_migrations
   health_check (~> 2.2.1)
+  ims-lti
   jsonapi (~> 0.1.1.beta6)
   listen (~> 3.0.5)
   pg (~> 0.18)

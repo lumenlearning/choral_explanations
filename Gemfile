@@ -11,6 +11,8 @@ gem 'puma', '~> 3.0'
 gem 'active_model_serializers'
 gem 'jsonapi', '~> 0.1.1.beta6'
 
+gem 'ims-lti'
+
 gem 'health_check', '~> 2.2.1'
 
 group :development, :test do
